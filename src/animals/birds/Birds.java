@@ -1,6 +1,8 @@
 package animals.birds;
 
-public class Birds extends animals.Animals{
+import java.util.Objects;
+
+public abstract class Birds extends animals.Animals{
 
     private String livingEnvironment = "не указано";
     private String movementType = "не указано";
@@ -10,18 +12,11 @@ public class Birds extends animals.Animals{
         if (checkInputString(movementType)) this.movementType = movementType;
     }
 
-    @Override
-    public String getLivingEnvironment() {
-        return livingEnvironment;
-    }
-
     public String getMovementType() {
         return movementType;
     }
 
-    public void hunt (){
-        System.out.println(super.getName() + " выдвинулся на охоту.");
-    }
+    public abstract void hunt ();
 
     @Override
     public void eat() {
@@ -66,12 +61,7 @@ public class Birds extends animals.Animals{
 
     @Override
     public int hashCode() {
-        int result = 0;
-        result = 29 * getLivingEnvironment().length() +
-                31 * getMovementType().length() +
-                29 * super.getName().length() +
-                super.getAge();
-        return result;
+       return Objects.hash(getLivingEnvironment(), getMovementType(),getName(), getAge());
     }
 
 

@@ -9,6 +9,9 @@ public class Flightless extends Birds{
     public void walk() {
         System.out.println(super.getName() + " гуляет.");
     }
+    public void hunt (){
+        System.out.println(super.getName() + " поковылял добывать еду.");
+    }
 
 
 }

@@ -1,5 +1,7 @@
 package animals.mammals;
 
+import java.util.Objects;
+
 public abstract class Mammals extends animals.Animals {
     public int travelSpeed = 0;
     private String typeOfFood = "не указано";
@@ -10,11 +12,11 @@ public abstract class Mammals extends animals.Animals {
         if (checkInputString(typeOfFood)) this.typeOfFood = typeOfFood;
     }
 
-    public String getTypeOfFood() {
+    public final String getTypeOfFood() {
         return typeOfFood;
     }
 
-    public int getTravelSpeed() {
+    public final int getTravelSpeed() {
         return travelSpeed;
     }
 
@@ -69,12 +71,7 @@ public abstract class Mammals extends animals.Animals {
 
     @Override
     public int hashCode() {
-        int result = 0;
-        result = 29 * super.getName().length()
-                + 29 * super.getLivingEnvironment().length()
-                + 29 * getTypeOfFood().length()
-                + super.getAge() + getTravelSpeed();
-        return result;
+        return Objects.hash(getLivingEnvironment(), getTypeOfFood(),getName(), getAge());
 
     }
 }

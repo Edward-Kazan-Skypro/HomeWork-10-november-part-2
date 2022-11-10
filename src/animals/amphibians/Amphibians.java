@@ -1,6 +1,8 @@
 package animals.amphibians;
 
 
+import java.util.Objects;
+
 public class Amphibians extends animals.Animals {
 
     public Amphibians(String name, int age, String livingEnvironment) {
@@ -44,9 +46,7 @@ public class Amphibians extends animals.Animals {
                 super.toString();
     }
 
-
-
-    /*@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -59,11 +59,6 @@ public class Amphibians extends animals.Animals {
 
     @Override
     public int hashCode() {
-        int result = 0;
-        result = 29 * super.getName().length()
-                + 29 * super.getLivingEnvironment().length()
-                + super.getAge();
-        return result;
-    }*/
-
+        return Objects.hash(getLivingEnvironment(), getName(), getAge());
+    }
 }

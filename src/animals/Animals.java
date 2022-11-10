@@ -18,15 +18,15 @@ public abstract class Animals {
     public static boolean checkInputNumber (int number) {
         return number > 0;
     }
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public int getAge() {
+    public final int getAge() {
         return age;
     }
 
-    public String getLivingEnvironment() {
+    public final String  getLivingEnvironment() {
         return livingEnvironment;
     }
 

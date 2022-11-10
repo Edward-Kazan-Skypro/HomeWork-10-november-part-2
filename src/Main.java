@@ -68,10 +68,12 @@ public class Main {
         System.out.println(сокол);
         сокол.viewResultAllMethods();
         System.out.println("----------------------------------------------------------------------------");
-        System.out.println("проверка дублей");
+        System.out.println("проверка работы методов equals() и hashCode()");
         FlyingBirds сокол_2 = new FlyingBirds("Черный сокол", 11,"материковая часть Австралии", "летающий");
         FlyingBirds сокол_3 = new FlyingBirds("Черный сокол", 11,"материковая часть Австралии", "летающий");
         System.out.println();
-        System.out.println("сокол_2.equals(сокол_3)? - - " + (сокол_2.equals(сокол_3)));
+        System.out.println("сокол_2.equals(сокол_3)? - " + (сокол_2.equals(сокол_3)));
+        System.out.println("сокол_2.hashCode() = " + сокол_2.hashCode());
+        System.out.println("сокол_3.hashCode() = " + сокол_3.hashCode());
     }
 }

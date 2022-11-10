@@ -7,7 +7,10 @@ public class FlyingBirds extends Birds{
     }
 
     public void fly (){
-        System.out.println(super.getName() + " летит над - " + super.getLivingEnvironment() + ".");
+        System.out.println(super.getName() + " летит.");
     }
 
+    public void hunt (){
+        System.out.println(super.getName() + " полетел на охоту.");
+    }
 }
